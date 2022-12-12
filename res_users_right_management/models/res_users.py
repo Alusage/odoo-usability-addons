@@ -52,7 +52,7 @@ class ResUsers(models.Model):
 
     def action_show_rules(self):
         self.ensure_one()
-        ir_rules = self.env['ir.rule']
+        ir_rules = self.env['ir.rule'].search([('global','=',True)])
         for group in self.groups_id:
             ir_rules |= group.rule_groups
         return {
