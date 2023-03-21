@@ -9,11 +9,15 @@
                 <page name="SEPA" string="SEPA" attrs="{'invisible': [('authorize_iban_direct_debit','=', False)]}">
                     <group>
                         <field name="authorize_iban_direct_debit" invisible="1"/>
+                        <field name="show_mandate_action" invisible="1"/>
                         <field name="iban"/>
                         <field name="iban_contact"/>
                     </group>
                 </page>
             </xpath>
+            <button name="preview_sale_order" position="before">
+                <button name="action_create_partner_mandate" type="object" string="Create SEPA Mandate" class="btn-primary" attrs="{'invisible': [('show_mandate_action', '=', False)]}"/>
+            </button>
         </field>
     </record>
 </odoo>
