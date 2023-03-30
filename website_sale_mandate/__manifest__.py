@@ -1,6 +1,6 @@
 {
     "name": "Ask SEPA mandate on checkout",
-    "version": "14.0.1.0.1",
+    "version": "12.0.1.0.1",
     "description": "Ask SEPA mandate on website sale checkout",
     "summary": "Ask SEPA mandate on website sale checkout",
     "author": "Nicolas JEUDY",
