@@ -12,8 +12,9 @@
         "website_sale",
         "website_form",
         "account_banking_mandate",
-        "account_banking_sepa_direct_debit"
-        ],
+        "account_banking_sepa_direct_debit",
+        "web_ir_actions_act_view_reload",
+    ],
     "data": [
         "views/sale_order_view.xml",
         "views/templates.xml",
