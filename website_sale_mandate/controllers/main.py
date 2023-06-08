@@ -6,11 +6,30 @@ from odoo import fields, http, tools, _
 from odoo.http import request
 from odoo.addons.base.models.ir_qweb_fields import nl2br
 from odoo.exceptions import ValidationError
+from odoo.addons.website_sale.controllers.main import WebsiteSale
 from odoo.addons.website_sale.controllers.main import WebsiteSaleForm
 from odoo.addons.base_iban.models.res_partner_bank import validate_iban
 
 _logger = logging.getLogger(__name__)
 
+class WebsiteSaleCustom(WebsiteSale):
+    @http.route(['/shop/extra_info'], type='http', auth="public", website=True, sitemap=False)
+    def extra_info(self, **post):
+        """ On extra info step, if SEPA mandate already exists, pass this step, and go directly to payment
+        """
+        order = request.website.sale_get_order()
+        mandate_obj = request.env["account.banking.mandate"]
+        mandate = mandate_obj.search(
+                [
+                    ("partner_id", "=", order.partner_id.id),
+                    ("state", "=", "valid"),
+                ]
+            )
+        if mandate:
+            return request.redirect("/shop/payment")
+        else:
+            return super(WebsiteSaleCustom,self).extra_info(**post)
+        
 
 class WebsiteSaleFormCustom(WebsiteSaleForm):
     @http.route(

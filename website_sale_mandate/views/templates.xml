@@ -2,9 +2,10 @@
 <odoo>
     <template id="website_sale_sepa_extra_info" inherit_id="website_sale.extra_info">
         <xpath expr="//form" position="replace">
-            <form action="/website_form/" method="post" class="s_website_form container-fluid" enctype="multipart/form-data" data-force_action="shop.sale.order" data-model_name="sale.order" data-success_page="/shop/payment">
-                <h1>SEPA direct debit is better for you ?</h1>
-                <p>Fill the fields below</p>
+            <form action="/website_form/" method="post" class="s_website_form container-fluid" enctype="multipart/form-data" data-force_action="shop.sale.order" data-model_name="sale.order" data-success_page="/shop/payment">            
+                <h4>For your <u>next payments</u>, prefer direct debit</h4>
+                <p>If you wish, you can send us your IBAN, so that we can make the next direct debits by SEPA mandate</p>
+                
                 <!-- <t t-if="error" t-foreach="error_message)" t-as="err">
                     <h5 class="text-danger" t-esc="err" />
                 </t> -->
@@ -13,7 +14,7 @@
                         <label class="col-form-label" for="iban_contact">Iban Contact name and first name</label>
                     </div>
                     <div class="col-lg-9 col-md-8">
-                        <input type="text" class="form-control o_website_form_input" name="iban_contact"/>
+                        <input type="text" class="form-control o_website_form_input" name="iban_contact" t-att-value="toto"/>
                     </div>
                 </div>
                 <div t-attf-class="form-group row form-field o_website_form_custom">
@@ -24,6 +25,7 @@
                         <input type="text" class="form-control o_website_form_input" name="iban"/>
                     </div>
                 </div>
+                <!--
                 <div class="form-group row form-field o_website_form_custom">
                     <div class="col-lg-3 col-md-4 text-md-right">
                         <label class="col-form-label" for="Give us your feedback">Give us your feedback</label>
@@ -32,6 +34,7 @@
                         <textarea class="form-control o_website_form_input" rows="8" name="Give us your feedback"/>
                     </div>
                 </div>
+                -->
                 <div class="form-group row form-field o_website_form_custom">
                     <div class="col-lg-3 col-md-4 text-md-right">
                         <label class="col-form-label" for="a_document">You can provide your RIB document</label>
