@@ -19,7 +19,7 @@ class WebsiteSaleCustom(WebsiteSale):
         """
         order = request.website.sale_get_order()
         mandate_obj = request.env["account.banking.mandate"]
-        mandate = mandate_obj.search(
+        mandate = mandate_obj.sudo().search(
                 [
                     ("partner_id", "=", order.partner_id.id),
                     ("state", "=", "valid"),

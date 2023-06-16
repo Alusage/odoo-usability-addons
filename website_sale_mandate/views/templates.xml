@@ -6,43 +6,59 @@
                 <h4>For your <u>next payments</u>, prefer direct debit</h4>
                 <p>If you wish, you can send us your IBAN, so that we can make the next direct debits by SEPA mandate</p>
                 
-                <!-- <t t-if="error" t-foreach="error_message)" t-as="err">
-                    <h5 class="text-danger" t-esc="err" />
-                </t> -->
-                <div class="form-group row form-field o_website_form_custom">
-                    <div class="col-lg-3 col-md-4 text-md-right">
-                        <label class="col-form-label" for="iban_contact">Iban Contact name and first name</label>
-                    </div>
-                    <div class="col-lg-9 col-md-8">
-                        <input type="text" class="form-control o_website_form_input" name="iban_contact" t-att-value="toto"/>
-                    </div>
+                <script>
+                    $( document ).ready(function() {
+                        
+                        $( "#direct_debit_fields" ).hide();
+                        $("#no").prop("checked", true);
+                        $("#no,#yes").change(function(){
+                            if ($(this).val() === 'no') {
+                                $( "#direct_debit_fields" ).hide();
+                            } else if ($(this).val() === 'yes') {
+                                $( "#direct_debit_fields" ).show();
+                            } 
+                        });
+                    
+                    });
+                    
+                </script>
+
+                <div>
+                    <input type="radio" id="no" name="direct" value="no" />
+                    <label for="no">I dont't want to use direct debit <u>for next payments</u></label>
                 </div>
-                <div t-attf-class="form-group row form-field o_website_form_custom">
-                    <div class="col-lg-3 col-md-4 text-md-right">
-                        <label class="col-form-label" for="iban">IBAN</label>
-                    </div>
-                    <div class="col-lg-9 col-md-8">
-                        <input type="text" class="form-control o_website_form_input" name="iban"/>
-                    </div>
+                <div>
+                    <input type="radio" id="yes" name="direct" value="yes" />
+                    <label for="yes">I want to use direct debit <u>for next payments</u></label>
                 </div>
-                <!--
-                <div class="form-group row form-field o_website_form_custom">
-                    <div class="col-lg-3 col-md-4 text-md-right">
-                        <label class="col-form-label" for="Give us your feedback">Give us your feedback</label>
+                
+                <div id="direct_debit_fields">
+                    <div class="form-group row form-field o_website_form_custom">
+                        <div class="col-lg-3 col-md-4 text-md-right">
+                            <label class="col-form-label" for="iban_contact">Iban Contact name and first name</label>
+                        </div>
+                        <div class="col-lg-9 col-md-8">
+                            <input type="text" class="form-control o_website_form_input" name="iban_contact" t-att-value="toto"/>
+                        </div>
                     </div>
-                    <div class="col-lg-9 col-md-8">
-                        <textarea class="form-control o_website_form_input" rows="8" name="Give us your feedback"/>
+                    <div t-attf-class="form-group row form-field o_website_form_custom">
+                        <div class="col-lg-3 col-md-4 text-md-right">
+                            <label class="col-form-label" for="iban">IBAN</label>
+                        </div>
+                        <div class="col-lg-9 col-md-8">
+                            <input type="text" class="form-control o_website_form_input" name="iban"/>
+                        </div>
                     </div>
+                    <div class="form-group row form-field o_website_form_custom">
+                        <div class="col-lg-3 col-md-4 text-md-right">
+                            <label class="col-form-label" for="a_document">You can provide your RIB document</label>
+                        </div>
+                        <div class="col-lg-9 col-md-8">
+                            <input type="file" class="form-control o_website_form_input" name="a_document"/>
+                        </div>
+                    </div>                    
                 </div>
-                -->
-                <div class="form-group row form-field o_website_form_custom">
-                    <div class="col-lg-3 col-md-4 text-md-right">
-                        <label class="col-form-label" for="a_document">You can provide your RIB document</label>
-                    </div>
-                    <div class="col-lg-9 col-md-8">
-                        <input type="file" class="form-control o_website_form_input" name="a_document"/>
-                    </div>
-                </div>
+                <br />
                 <div class="form-group row">
                     <div class="col-lg-3 col-md-4">
                     </div>

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-08 09:33+0000\n"
-"PO-Revision-Date: 2023-06-08 09:33+0000\n"
+"POT-Creation-Date: 2023-06-14 19:19+0000\n"
+"PO-Revision-Date: 2023-06-14 19:19+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -36,6 +36,16 @@ msgid "For your <u>next payments</u>, prefer direct debit"
 msgstr "Pour vos <u>prochains paiements</u>, préférez le prélevement automatique"
 
 #. module: website_sale_mandate
+#: model_terms:ir.ui.view,arch_db:website_sale_mandate.website_sale_sepa_extra_info
+msgid "I dont't want to use direct debit <u>for next payments</u>"
+msgstr "Je ne souhaite pas utiliser le prélevement automatique <u>pour les prochains paiements</u>"
+
+#. module: website_sale_mandate
+#: model_terms:ir.ui.view,arch_db:website_sale_mandate.website_sale_sepa_extra_info
+msgid "I want to use direct debit <u>for next payments</u>"
+msgstr "Je souhaite utiliser le prélevement automatique <u>pour les prochains paiements</u>"
+
+#. module: website_sale_mandate
 #: model:ir.model.fields,field_description:website_sale_mandate.field_sale_order__iban
 #: model_terms:ir.ui.view,arch_db:website_sale_mandate.website_sale_sepa_extra_info
 msgid "IBAN"
@@ -44,7 +54,7 @@ msgstr ""
 #. module: website_sale_mandate
 #: model:ir.model.fields,field_description:website_sale_mandate.field_sale_order__iban_contact
 msgid "Iban Contact"
-msgstr "Contacte de l'IBAN"
+msgstr "Contact de l'IBAN"
 
 #. module: website_sale_mandate
 #: model_terms:ir.ui.view,arch_db:website_sale_mandate.website_sale_sepa_extra_info
