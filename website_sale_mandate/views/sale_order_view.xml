@@ -20,5 +20,18 @@
             </button>
         </field>
     </record>
-</odoo>
 
+    <record id="view_sales_order_filter_mandate" model="ir.ui.view">
+        <field name="name">sale.order.list.select.inherit.mandate</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_sales_order_filter" />
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='activities_upcoming_all']" position="after">
+                <separator />
+                <field name="show_mandate_action" invisible="1" />
+                <filter string="Pending SEPA mandate" name="sepa_mandate"
+                    domain="[('show_mandate_action', '=', True)]" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

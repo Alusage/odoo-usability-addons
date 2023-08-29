@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-14 19:19+0000\n"
-"PO-Revision-Date: 2023-06-14 19:19+0000\n"
+"POT-Creation-Date: 2023-08-29 21:23+0000\n"
+"PO-Revision-Date: 2023-08-29 21:23+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -70,6 +70,11 @@ msgstr "Si vous le souhaitez, vous pouvez nous communiquer votre IBAN, afin que 
 #: model_terms:ir.ui.view,arch_db:website_sale_mandate.website_sale_sepa_extra_info
 msgid "Next <span class=\"fa fa-chevron-right\"/>"
 msgstr "Suivant"
+
+#. module: website_sale_mandate
+#: model_terms:ir.ui.view,arch_db:website_sale_mandate.view_sales_order_filter_mandate
+msgid "Pending SEPA mandate"
+msgstr "Mandat SEPA en attente"
 
 #. module: website_sale_mandate
 #: model_terms:ir.ui.view,arch_db:website_sale_mandate.inherit_view_order_form_inherit_sale_mandate
